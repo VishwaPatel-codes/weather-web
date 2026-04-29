@@ -20,5 +20,17 @@ button.addEventListener("click", () => {
 
             document.querySelector('.weather-info p:nth-child(3)').textContent = 
                 'condition: ' + data.weather[0].main;
+        const condition = data.weather[0].main.toLowerCase();
+            if (condition.includes('rain')) {
+                document.body.style.backgroundImage = "url(assets/rain.png)";
+            }   else if (condition.includes('cloud')) {
+                document.body.style.backgroundImage = "url(assets/spring.png)";
+            }   else if (condition.includes('clear')) {
+                document.body.style.backgroundImage = "url(assets/summer.png)";
+            }   else if (condition.includes('snow')) {
+                document.body.style.backgroundImage = "url(assets/winter.png)";
+            }   else {
+                document.body.style.backgroundImage = "url(assets/spring.png)";
+            }
         });
 });
