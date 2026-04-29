@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Press Start 2P', sa;
+    font-family: 'chewy',sans-serif;
 }
 .card {
     background: rgba(100, 87, 196, 0.95);

@@ -5,10 +5,14 @@ const Input = document.querySelector('input');
 
 button.addEventListener("click", () => {
     const city = Input.value;
-
+    if (!city) return;
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => {
+            if (data.cod !== 200) {
+                alert('City not found 😭');
+                return;
+            }
             document.querySelector('.weather-info h3').textContent = data.name;
             
             document.querySelector('.weather-info p:nth-child(2)').textContent = 
